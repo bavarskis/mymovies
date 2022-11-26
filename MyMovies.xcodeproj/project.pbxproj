@@ -28,6 +28,10 @@
 		F8A440E82932B8B20041E4A0 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440E72932B8B10041E4A0 /* Movies.swift */; };
 		F8A440EF2932BD8B0041E4A0 /* DataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440EE2932BD8B0041E4A0 /* DataFetcherTests.swift */; };
 		F8A440F12932BE170041E4A0 /* RequestParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440F02932BE170041E4A0 /* RequestParametersTests.swift */; };
+		F8A440F42932C49F0041E4A0 /* MockAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440F32932C49F0041E4A0 /* MockAuthenticator.swift */; };
+		F8A440F92932C7B10041E4A0 /* person.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A440F82932C7B10041E4A0 /* person.json */; };
+		F8A440FC2932C7CA0041E4A0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440FB2932C7CA0041E4A0 /* Person.swift */; };
+		F8A441002932C8880041E4A0 /* MockAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440FF2932C8880041E4A0 /* MockAppConfiguration.swift */; };
 		F8C38AC7293275680005540A /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38AC6293275680005540A /* MoviesView.swift */; };
 		F8C38AC9293276A00005540A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38AC8293276A00005540A /* FavoritesView.swift */; };
 		F8C38ACB293277330005540A /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38ACA293277330005540A /* TabsView.swift */; };
@@ -75,6 +79,10 @@
 		F8A440E72932B8B10041E4A0 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		F8A440EE2932BD8B0041E4A0 /* DataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherTests.swift; sourceTree = "<group>"; };
 		F8A440F02932BE170041E4A0 /* RequestParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParametersTests.swift; sourceTree = "<group>"; };
+		F8A440F32932C49F0041E4A0 /* MockAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticator.swift; sourceTree = "<group>"; };
+		F8A440F82932C7B10041E4A0 /* person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person.json; sourceTree = "<group>"; };
+		F8A440FB2932C7CA0041E4A0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F8A440FF2932C8880041E4A0 /* MockAppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppConfiguration.swift; sourceTree = "<group>"; };
 		F8C38AC6293275680005540A /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		F8C38AC8293276A00005540A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		F8C38ACA293277330005540A /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -216,6 +224,8 @@
 		F8A440E92932BCC40041E4A0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F8A440FD2932C86C0041E4A0 /* Configuration */,
+				F8A440F22932C25C0041E4A0 /* Authentication */,
 				F8A440ED2932BD160041E4A0 /* Networking */,
 			);
 			path = Core;
@@ -247,10 +257,68 @@
 		F8A440ED2932BD160041E4A0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F8A440F72932C6780041E4A0 /* Fixtures */,
+				F8A440FA2932C7B90041E4A0 /* Models */,
+				F8A440F62932C52F0041E4A0 /* Mocks */,
 				F8A440EE2932BD8B0041E4A0 /* DataFetcherTests.swift */,
 				F8A440F02932BE170041E4A0 /* RequestParametersTests.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		F8A440F22932C25C0041E4A0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440F52932C5210041E4A0 /* Mocks */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F8A440F52932C5210041E4A0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440F32932C49F0041E4A0 /* MockAuthenticator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F8A440F62932C52F0041E4A0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F8A440F72932C6780041E4A0 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440F82932C7B10041E4A0 /* person.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		F8A440FA2932C7B90041E4A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440FB2932C7CA0041E4A0 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8A440FD2932C86C0041E4A0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440FE2932C8750041E4A0 /* Mocks */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F8A440FE2932C8750041E4A0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F8A440FF2932C8880041E4A0 /* MockAppConfiguration.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		F8C38AB2293257310005540A /* Source */ = {
@@ -480,6 +548,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A440F92932C7B10041E4A0 /* person.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,9 +589,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A441002932C8880041E4A0 /* MockAppConfiguration.swift in Sources */,
+				F8A440FC2932C7CA0041E4A0 /* Person.swift in Sources */,
 				F833B8552930E2CD00A824EB /* MyMoviesTests.swift in Sources */,
 				F8A440F12932BE170041E4A0 /* RequestParametersTests.swift in Sources */,
 				F8A440EF2932BD8B0041E4A0 /* DataFetcherTests.swift in Sources */,
+				F8A440F42932C49F0041E4A0 /* MockAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
