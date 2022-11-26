@@ -22,7 +22,7 @@ struct NetworkEndpoint {
 
     var urlComponents: URLComponents {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = scheme
         components.host = appConfiguration.serviceHost
         components.path = appConfiguration.serviceVersion + path
         return components
