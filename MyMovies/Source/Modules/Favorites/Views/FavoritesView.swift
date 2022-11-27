@@ -13,7 +13,7 @@ struct FavoritesView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Favorites!")
+            Text("favorites.tab")
         }
         .padding()
     }

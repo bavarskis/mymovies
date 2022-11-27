@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  MyMovies
+
+  Created by Aurimas Bavarskis on 27/11/2022.
+  
+*/
+
+"home.tab" = "Home";
+"favorites.tab" = "Favorites";

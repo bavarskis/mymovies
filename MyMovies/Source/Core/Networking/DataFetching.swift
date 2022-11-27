@@ -28,7 +28,7 @@ extension DataFetching {
             throw CoreError.invalidUrl
         }
 
-        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let session = URLSession(configuration: urlSessionConfiguration)
         let dataAndResponse = try await session.data(from: url)
         guard let object = try? JSONDecoder().decode(DataType.self, from: dataAndResponse.0) else {
             throw CoreError.mapping
