@@ -12,11 +12,11 @@ struct TabsView: View {
         TabView {
             MoviesView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("home.tab", systemImage: "house")
                 }
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: "star")
+                    Label("favorites.tab", systemImage: "star")
                 }
         }
     }

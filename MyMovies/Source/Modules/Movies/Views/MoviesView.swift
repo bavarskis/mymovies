@@ -13,7 +13,7 @@ struct MoviesView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Movies!")
+            Text("home.tab")
         }
         .padding()
         .onAppear {
@@ -26,7 +26,6 @@ struct MoviesView: View {
             let movies: Movies = try await DataFetcher().fetch(endpoint: .nowPlayingMovies, parameters: .empty)
             print(movies)
         }
-
     }
 }
 

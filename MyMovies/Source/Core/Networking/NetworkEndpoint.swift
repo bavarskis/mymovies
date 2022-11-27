@@ -12,7 +12,7 @@ struct NetworkEndpoint {
     let path: String
     let appConfiguration: AppConfigurable
 
-    init(scheme: String = "http",
+    init(scheme: String = "https",
          path: String,
          appConfiguration: AppConfigurable = AppConfiguration()) {
         self.scheme = scheme
