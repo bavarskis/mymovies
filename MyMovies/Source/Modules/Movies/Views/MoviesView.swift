@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct MoviesView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("home.tab")
-        }
-        .padding()
-        .onAppear {
-            loadData()
-        }
-    }
+    @StateObject private var viewModel = ViewModel()
 
-    func loadData() {
-        Task {
-            let movies: Movies = try await DataFetcher().fetch(endpoint: .nowPlayingMovies, parameters: .empty)
-            print(movies)
+    var body: some View {
+        ScrollView {
+            VStack {
+                // Now playing
+                MoviesCollectionView(title: viewModel.nowPlayingTitle, movies: viewModel.nowPlayingMovies)
+                    .task {
+                        viewModel.loadData(for: .nowPlaying)
+                    }
+
+                // Popular
+                MoviesCollectionView(title: viewModel.popularTitle, movies: viewModel.nowPlayingMovies)
+                    .task {
+                        viewModel.loadData(for: .popular)
+                    }
+            }
         }
+        .background(
+            Image("camera")
+                .resizable()
+                .scaledToFill()
+                .blur(radius: 30)
+                .zIndex(0)
+        )
     }
 }
 

@@ -10,6 +10,6 @@ import Foundation
 enum CoreError: Error {
     case generic(Error)
     case authentication
-    case mapping
+    case mapping(Error)
     case invalidUrl
 }

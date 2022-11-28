@@ -8,15 +8,19 @@
 import Foundation
 
 struct AppConfiguration: AppConfigurable {
-    var serviceHost: String {
+    static var serviceHost: String {
         "api.themoviedb.org"
     }
 
-    var serviceVersion: String {
+    static var serviceVersion: String {
         "/3"
     }
 
-    var language: String {
+    static var imagesLocation: String {
+        "https://image.tmdb.org/t/p/w500"
+    }
+
+    static var language: String {
         "en"
     }
 }

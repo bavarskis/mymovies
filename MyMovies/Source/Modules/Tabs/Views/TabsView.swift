@@ -10,10 +10,14 @@ import SwiftUI
 struct TabsView: View {
     var body: some View {
         TabView {
-            MoviesView()
-                .tabItem {
-                    Label("home.tab", systemImage: "house")
-                }
+            NavigationView {
+                MoviesView()
+                    .navigationTitle("movies")
+            }
+            .tabItem {
+                Label("home.tab", systemImage: "house")
+            }
+
             FavoritesView()
                 .tabItem {
                     Label("favorites.tab", systemImage: "star")

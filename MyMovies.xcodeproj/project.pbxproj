@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82C77A62934F9D200FF6F65 /* MoviesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C77A52934F9D200FF6F65 /* MoviesCollectionView.swift */; };
 		F833B8442930E2CC00A824EB /* MyMoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833B8432930E2CC00A824EB /* MyMoviesApp.swift */; };
 		F833B8462930E2CC00A824EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833B8452930E2CC00A824EB /* ContentView.swift */; };
 		F833B8482930E2CD00A824EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F833B8472930E2CD00A824EB /* Assets.xcassets */; };
@@ -32,6 +33,10 @@
 		F8A440FC2932C7CA0041E4A0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440FB2932C7CA0041E4A0 /* Person.swift */; };
 		F8A441002932C8880041E4A0 /* MockAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440FF2932C8880041E4A0 /* MockAppConfiguration.swift */; };
 		F8A4410529338BF30041E4A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A4410429338BF30041E4A0 /* Localizable.strings */; };
+		F8A4410A2933A4BE0041E4A0 /* ImageAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A441092933A4BE0041E4A0 /* ImageAndText.swift */; };
+		F8A4410C2933A5FA0041E4A0 /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4410B2933A5FA0041E4A0 /* ImageOverlay.swift */; };
+		F8A441102933AFA20041E4A0 /* MoviesView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4410F2933AFA20041E4A0 /* MoviesView+ViewModel.swift */; };
+		F8A441122933B5BB0041E4A0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A441112933B5BB0041E4A0 /* Movie.swift */; };
 		F8C38AC7293275680005540A /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38AC6293275680005540A /* MoviesView.swift */; };
 		F8C38AC9293276A00005540A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38AC8293276A00005540A /* FavoritesView.swift */; };
 		F8C38ACB293277330005540A /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C38ACA293277330005540A /* TabsView.swift */; };
@@ -55,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F82C77A52934F9D200FF6F65 /* MoviesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionView.swift; sourceTree = "<group>"; };
 		F833B8402930E2CC00A824EB /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F833B8432930E2CC00A824EB /* MyMoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesApp.swift; sourceTree = "<group>"; };
 		F833B8452930E2CC00A824EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 		F8A440FB2932C7CA0041E4A0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		F8A440FF2932C8880041E4A0 /* MockAppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppConfiguration.swift; sourceTree = "<group>"; };
 		F8A4410429338BF30041E4A0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F8A441092933A4BE0041E4A0 /* ImageAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndText.swift; sourceTree = "<group>"; };
+		F8A4410B2933A5FA0041E4A0 /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
+		F8A4410F2933AFA20041E4A0 /* MoviesView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesView+ViewModel.swift"; sourceTree = "<group>"; };
+		F8A441112933B5BB0041E4A0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		F8C38AC6293275680005540A /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		F8C38AC8293276A00005540A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		F8C38ACA293277330005540A /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -174,6 +184,8 @@
 		F8A440C829328C9B0041E4A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8A441092933A4BE0041E4A0 /* ImageAndText.swift */,
+				F8A4410B2933A5FA0041E4A0 /* ImageOverlay.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +193,7 @@
 		F8A440C929328CB50041E4A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F8A441112933B5BB0041E4A0 /* Movie.swift */,
 				F8A440E72932B8B10041E4A0 /* Movies.swift */,
 			);
 			path = Models;
@@ -329,13 +342,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F8A4410629338D1F0041E4A0 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		F8A4410729338D320041E4A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,13 +359,13 @@
 		F8C38AB2293257310005540A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F8C38AB32932573B0005540A /* Core */,
+				F8C38AB32932573B0005540A /* Shared */,
 				F8C38AB4293257470005540A /* Modules */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		F8C38AB32932573B0005540A /* Core */ = {
+		F8C38AB32932573B0005540A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				F8C38ABD2932723C0005540A /* Authentication */,
@@ -370,7 +376,7 @@
 				F8C38ABE293272450005540A /* Networking */,
 				F8A440C829328C9B0041E4A0 /* Views */,
 			);
-			path = Core;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		F8C38AB4293257470005540A /* Modules */ = {
@@ -422,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				F8A440E12932B3A20041E4A0 /* Models */,
-				F8A4410629338D1F0041E4A0 /* ViewModels */,
 				F8C38AC4293274A40005540A /* Views */,
 			);
 			path = Movies;
@@ -450,6 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				F8C38AC6293275680005540A /* MoviesView.swift */,
+				F82C77A52934F9D200FF6F65 /* MoviesCollectionView.swift */,
+				F8A4410F2933AFA20041E4A0 /* MoviesView+ViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,12 +606,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A4410A2933A4BE0041E4A0 /* ImageAndText.swift in Sources */,
 				F8A440E42932B3EC0041E4A0 /* NetworkEndpoint+Movies.swift in Sources */,
 				F8A440E02932AEF60041E4A0 /* DataFetcher.swift in Sources */,
 				F8A440D32932916C0041E4A0 /* CoreError.swift in Sources */,
 				F8C38AC9293276A00005540A /* FavoritesView.swift in Sources */,
 				F8A440D8293296180041E4A0 /* AppConfigurable.swift in Sources */,
 				F833B8462930E2CC00A824EB /* ContentView.swift in Sources */,
+				F82C77A62934F9D200FF6F65 /* MoviesCollectionView.swift in Sources */,
 				F8A440DE293299AA0041E4A0 /* SessionAuthenticator.swift in Sources */,
 				F8A440D5293295090041E4A0 /* RequestParameters.swift in Sources */,
 				F8A440E82932B8B20041E4A0 /* Movies.swift in Sources */,
@@ -612,8 +621,11 @@
 				F8A440CF29328F8C0041E4A0 /* NetworkEndpoint.swift in Sources */,
 				F8A440DC2932992A0041E4A0 /* SessionAuthenticating.swift in Sources */,
 				F8A440CD29328F150041E4A0 /* DataFetching.swift in Sources */,
+				F8A441122933B5BB0041E4A0 /* Movie.swift in Sources */,
+				F8A441102933AFA20041E4A0 /* MoviesView+ViewModel.swift in Sources */,
 				F8C38AC7293275680005540A /* MoviesView.swift in Sources */,
 				F833B8442930E2CC00A824EB /* MyMoviesApp.swift in Sources */,
+				F8A4410C2933A5FA0041E4A0 /* ImageOverlay.swift in Sources */,
 				F8C38ACB293277330005540A /* TabsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

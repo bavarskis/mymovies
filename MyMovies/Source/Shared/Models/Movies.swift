@@ -10,9 +10,3 @@ import Foundation
 struct Movies: Codable {
     let results: [Movie]
 }
-
-extension Movies {
-    struct Movie: Codable {
-        let title: String
-    }
-}
