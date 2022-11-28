@@ -30,10 +30,12 @@ extension DataFetching {
 
         let session = URLSession(configuration: urlSessionConfiguration)
         let dataAndResponse = try await session.data(from: url)
-        guard let object = try? JSONDecoder().decode(DataType.self, from: dataAndResponse.0) else {
-            throw CoreError.mapping
-        }
 
-        return object
+        do {
+            return try JSONDecoder().decode(DataType.self, from: dataAndResponse.0)
+        } catch {
+            print(error)
+            throw CoreError.mapping(error)
+        }
     }
 }

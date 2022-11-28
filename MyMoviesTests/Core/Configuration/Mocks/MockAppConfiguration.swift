@@ -8,15 +8,19 @@
 @testable import MyMovies
 
 struct MockAppConfiguration: AppConfigurable {
-    var serviceHost: String {
+    static var serviceHost: String {
         "localhost"
     }
 
-    var serviceVersion: String {
+    static var serviceVersion: String {
         ""
     }
 
-    var language: String {
+    static var imagesLocation: String {
+        ""
+    }
+
+    static var language: String {
         "en"
     }
 }

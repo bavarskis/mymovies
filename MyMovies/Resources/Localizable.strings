@@ -6,5 +6,9 @@
   
 */
 
+"loading" = "loading...";
 "home.tab" = "Home";
 "favorites.tab" = "Favorites";
+"nowPlaying" = "Now playing";
+"popular" = "Popular";
+"movies" = "Movies";

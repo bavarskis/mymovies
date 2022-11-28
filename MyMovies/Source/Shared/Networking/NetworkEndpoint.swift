@@ -10,11 +10,11 @@ import Foundation
 struct NetworkEndpoint {
     let scheme: String
     let path: String
-    let appConfiguration: AppConfigurable
+    let appConfiguration: AppConfigurable.Type
 
     init(scheme: String = "https",
          path: String,
-         appConfiguration: AppConfigurable = AppConfiguration()) {
+         appConfiguration: AppConfigurable.Type = AppConfiguration.self) {
         self.scheme = scheme
         self.path = path
         self.appConfiguration = appConfiguration
