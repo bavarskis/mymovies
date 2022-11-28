@@ -16,10 +16,16 @@ struct MoviesCollectionView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(15)
             .font(.headline)
+            .lineLimit(2)
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 15) {
                 ForEach(movies, id: \.id) { movie in
-                    ImageAndText(imagePath: movie.backdropFullPath, text: movie.title)
+                    NavigationLink(destination: MovieDetailsView(movie: movie)) {
+                        ImageAndText(imagePath: movie.backdropFullPath, text: movie.title)
+                            .onTapGesture {
+
+                            }
+                    }
                 }
             }
             .padding(15)

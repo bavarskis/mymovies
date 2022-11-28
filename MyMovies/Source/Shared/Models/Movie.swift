@@ -7,23 +7,29 @@
 
 import Foundation
 
-struct Movie: Codable, Identifiable {
+struct Movie: Codable, Identifiable, Equatable {
     let id: Int
     let title: String
-    let backdrop_path: String?
+    let backdropPath: String?
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case backdrop_path = "backdrop_path"
+        case backdropPath = "backdrop_path"
     }
 }
 
-extension Movie: Equatable {}
-
 extension Movie {
     var backdropFullPath: String? {
-        backdrop_path.flatMap { AppConfiguration.imagesLocation + $0 }
+        backdropPath.flatMap { AppConfiguration.imagesLocation + $0 }
+    }
+}
+
+extension Movie {
+    init(id: Int, title: String) {
+        self.id = id
+        self.title = title
+        self.backdropPath = nil
     }
 }
 
