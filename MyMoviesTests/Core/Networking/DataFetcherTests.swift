@@ -16,7 +16,7 @@ final class DataFetcherTests: XCTestCase {
         let sut = DataFetcher()
         sut.authenticator = mockAuthenticator
         do {
-            let result: Person = try await sut.fetch(endpoint: .localhost, parameters: .empty)
+            let result: Person = try await sut.fetch(endpoint: .localhost, parameters: [])
             XCTFail("Expected authentication error but received a result \(result)")
         } catch {
             let error: CoreError = try XCTUnwrap(error as? CoreError)
@@ -36,7 +36,7 @@ final class DataFetcherTests: XCTestCase {
         let sut = DataFetcher()
         sut.authenticator = mockAuthenticator
         do {
-            let result: Person = try await sut.fetch(endpoint: .invalidEndpoint, parameters: .empty)
+            let result: Person = try await sut.fetch(endpoint: .invalidEndpoint, parameters: [])
             XCTFail("Expected invalid url error but received a result \(result)")
         } catch {
             let error: CoreError = try XCTUnwrap(error as? CoreError)
@@ -51,8 +51,8 @@ final class DataFetcherTests: XCTestCase {
 }
 
 private extension NetworkEndpoint {
-    static let localhost = NetworkEndpoint(scheme: "http", path: "/8080", appConfiguration: MockAppConfiguration())
+    static let localhost = NetworkEndpoint(scheme: "http", path: "/8080", appConfiguration: MockAppConfiguration.self)
 
     // path is missing a front slash
-    static let invalidEndpoint = NetworkEndpoint(scheme: "http", path: "8080", appConfiguration: MockAppConfiguration())
+    static let invalidEndpoint = NetworkEndpoint(scheme: "http", path: "8080", appConfiguration: MockAppConfiguration.self)
 }

@@ -9,18 +9,19 @@ import Foundation
 
 protocol DataFetching {
     var authenticator: SessionAuthenticating { get }
-    var urlSessionConfiguration: URLSessionConfiguration { get }
     var urlSession: URLSession { get }
-    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: [RequestParameters]) async throws -> DataType
+    func fetch<DataType: Codable>(endpoint: NetworkEndpoint,
+                                  parameters: [RequestParameters]) async throws -> DataType
 }
 
 extension DataFetching {
-    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: [RequestParameters]) async throws -> DataType {
+    func fetch<DataType: Codable>(endpoint: NetworkEndpoint,
+                                  parameters: [RequestParameters]) async throws -> DataType {
         let token = try await authenticator.authenticate()
-
         var urlComponents = endpoint.urlComponents
-
-        urlComponents.queryItems = parameters.flatMap { $0.queryItems } + [URLQueryItem(name: "api_key", value: token)]
+        let additionalParameters = [URLQueryItem(name: "api_key", value: token),
+                                    URLQueryItem(name: "language", value: endpoint.appConfiguration.language)]
+        urlComponents.queryItems = parameters.flatMap { $0.queryItems } + additionalParameters
 
         let replaceablePathComponents = parameters.flatMap { $0.pathParameters }
         for component in replaceablePathComponents {
@@ -34,13 +35,12 @@ extension DataFetching {
             throw CoreError.invalidUrl
         }
 
-        let session = URLSession(configuration: urlSessionConfiguration)
+        let session = urlSession
         let dataAndResponse = try await session.data(from: url)
 
         do {
             return try JSONDecoder().decode(DataType.self, from: dataAndResponse.0)
         } catch {
-            print(error)
             throw CoreError.mapping(error)
         }
     }

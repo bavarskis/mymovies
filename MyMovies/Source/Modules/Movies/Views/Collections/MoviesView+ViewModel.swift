@@ -12,21 +12,22 @@ extension MoviesView {
         let nowPlayingTitle = NSLocalizedString("nowPlaying", comment: "")
         let popularTitle = NSLocalizedString("popular", comment: "")
 
+        private var dataFetcher: DataFetching
         @Published var nowPlayingMovies: [Movie] = []
         @Published var popularMovies: [Movie] = []
 
-        private var dataFetcher: DataFetching = DataFetcher()
+        init(dataFetcher: DataFetching = DataFetcher()) {
+            self.dataFetcher = dataFetcher
+        }
 
-        func loadData(for movieType: MovieType) {
-            Task {
-                switch movieType {
-                case .nowPlaying:
-                    let movies: Movies = try await DataFetcher().fetch(endpoint: .nowPlayingMovies, parameters: [.empty])
-                    nowPlayingMovies = movies.results
-                case .popular:
-                    let movies: Movies = try await DataFetcher().fetch(endpoint: .popularMovies, parameters: [.empty])
-                    popularMovies = movies.results
-                }
+        func loadData(for movieType: MovieType) async throws {
+            switch movieType {
+            case .nowPlaying:
+                let movies: Movies = try await dataFetcher.fetch(endpoint: .nowPlayingMovies, parameters: [.empty])
+                nowPlayingMovies = movies.results
+            case .popular:
+                let movies: Movies = try await dataFetcher.fetch(endpoint: .popularMovies, parameters: [.empty])
+                popularMovies = movies.results
             }
         }
 

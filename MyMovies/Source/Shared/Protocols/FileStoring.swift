@@ -37,7 +37,7 @@ extension FileStoring {
     }
 
     func removeAll() throws {
-        var empty: [Item] = []
+        let empty: [Item] = []
         let data = try JSONEncoder().encode(empty)
         try data.write(to: storagePath, options: .completeFileProtection)
     }
