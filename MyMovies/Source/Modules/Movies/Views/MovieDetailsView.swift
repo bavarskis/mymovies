@@ -23,8 +23,8 @@ struct MovieDetailsView: View {
     }
 }
 
-//struct MovieDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MovieDetailsView(movie: Movie())
-//    }
-//}
+struct MovieDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MovieDetailsView(movie: Movie(id: 0, title: "Preview"))
+    }
+}
