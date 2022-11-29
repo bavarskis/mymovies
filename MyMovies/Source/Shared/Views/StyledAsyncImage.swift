@@ -26,7 +26,7 @@ struct StyledAsyncImage: View {
                        alignment: .center)
         } placeholder: {
             Text("loading")
-                .frame(minWidth: 300,
+                .frame(minWidth: 0,
                        maxWidth: .infinity,
                        minHeight: 200,
                        maxHeight: 200,
