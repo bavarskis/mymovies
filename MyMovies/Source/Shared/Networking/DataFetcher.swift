@@ -12,11 +12,7 @@ class DataFetcher: DataFetching {
         SessionAuthenticator()
     }()
 
-    lazy var urlSessionConfiguration: URLSessionConfiguration = {
-        URLSessionConfiguration.default
-    }()
-
     lazy var urlSession: URLSession = {
-        URLSession(configuration: urlSessionConfiguration)
+        URLSession(configuration: URLSessionConfiguration.default)
     }()
 }

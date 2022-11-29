@@ -27,6 +27,8 @@
 		F83DEBF12936495E00587D21 /* FileStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF02936495E00587D21 /* FileStoring.swift */; };
 		F83DEBF329364BF000587D21 /* FileManager+Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF229364BF000587D21 /* FileManager+Documents.swift */; };
 		F83DEBF62936612100587D21 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F83DEBF52936612100587D21 /* OrderedCollections */; };
+		F83DEBF82936A0BD00587D21 /* MoviesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */; };
+		F83DEBFA2936A20C00587D21 /* MockDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF92936A20C00587D21 /* MockDataFetcher.swift */; };
 		F8A440CD29328F150041E4A0 /* DataFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440CC29328F150041E4A0 /* DataFetching.swift */; };
 		F8A440CF29328F8C0041E4A0 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440CE29328F8C0041E4A0 /* NetworkEndpoint.swift */; };
 		F8A440D32932916C0041E4A0 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440D22932916C0041E4A0 /* CoreError.swift */; };
@@ -95,6 +97,8 @@
 		F83DEBEC293647FF00587D21 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		F83DEBF02936495E00587D21 /* FileStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStoring.swift; sourceTree = "<group>"; };
 		F83DEBF229364BF000587D21 /* FileManager+Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Documents.swift"; sourceTree = "<group>"; };
+		F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelTests.swift; sourceTree = "<group>"; };
+		F83DEBF92936A20C00587D21 /* MockDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFetcher.swift; sourceTree = "<group>"; };
 		F8A440CC29328F150041E4A0 /* DataFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetching.swift; sourceTree = "<group>"; };
 		F8A440CE29328F8C0041E4A0 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		F8A440D22932916C0041E4A0 /* CoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		F8A440EC2932BCEC0041E4A0 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 		F8A440F62932C52F0041E4A0 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				F83DEBF92936A20C00587D21 /* MockDataFetcher.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -703,6 +709,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A441002932C8880041E4A0 /* MockAppConfiguration.swift in Sources */,
+				F83DEBFA2936A20C00587D21 /* MockDataFetcher.swift in Sources */,
+				F83DEBF82936A0BD00587D21 /* MoviesViewModelTests.swift in Sources */,
 				F8A440FC2932C7CA0041E4A0 /* Person.swift in Sources */,
 				F8A440F12932BE170041E4A0 /* RequestParametersTests.swift in Sources */,
 				F8A440EF2932BD8B0041E4A0 /* DataFetcherTests.swift in Sources */,

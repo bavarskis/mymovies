@@ -16,13 +16,21 @@ struct MoviesView: View {
                 // Now playing
                 MoviesCollectionView(title: viewModel.nowPlayingTitle, movies: viewModel.nowPlayingMovies)
                     .task {
-                        viewModel.loadData(for: .nowPlaying)
+                        do {
+                            try await viewModel.loadData(for: .nowPlaying)
+                        } catch {
+                            // Needs to be handled
+                        }
                     }
 
                 // Popular
                 MoviesCollectionView(title: viewModel.popularTitle, movies: viewModel.nowPlayingMovies)
                     .task {
-                        viewModel.loadData(for: .popular)
+                        do {
+                            try await viewModel.loadData(for: .popular)
+                        } catch {
+                            // Needs to be handled
+                        }
                     }
             }
         }
