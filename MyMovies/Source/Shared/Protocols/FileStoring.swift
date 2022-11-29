@@ -9,7 +9,7 @@ import Foundation
 import OrderedCollections
 
 protocol FileStoring {
-    associatedtype Item: Codable & Identifiable & Hashable
+    associatedtype Item: Codable, Identifiable, Hashable
 
     var storagePath: URL { get }
     func store(items: [Item]) throws
@@ -57,7 +57,7 @@ extension FileStoring {
         }
     }
 
-    func retrieveAll() throws -> [Item]  {
+    func retrieveAll() throws -> [Item] {
         let data = try Data(contentsOf: storagePath)
         return try JSONDecoder().decode([Item].self, from: data)
     }

@@ -69,9 +69,11 @@ import SwiftUI
 }
 
 extension MoviesViewModelTests {
-    static let mockMovies = [Movie(id: 0, title: "Movie 1", backdropPath: nil),
-                             Movie(id: 1, title: "Movie 2", backdropPath: nil),
-                             Movie(id: 2, title: "Movie 3", backdropPath: nil)]
+    static let mockMovies = [
+        Movie(id: 0, title: "Movie 1", backdropPath: nil),
+        Movie(id: 1, title: "Movie 2", backdropPath: nil),
+        Movie(id: 2, title: "Movie 3", backdropPath: nil)
+    ]
 
     static let mockMoviesWrapper = Movies(results: mockMovies)
 }

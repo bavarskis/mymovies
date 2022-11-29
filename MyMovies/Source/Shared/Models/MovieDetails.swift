@@ -41,7 +41,7 @@ struct MovieDetails: Codable, Identifiable, Hashable {
     }
 
     public func hash(into hasher: inout Hasher) {
-        return hasher.combine(id)
+        hasher.combine(id)
     }
 }
 
