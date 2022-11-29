@@ -20,7 +20,6 @@ extension FavoritesView {
             } catch {
                 print("no favorites found")
             }
-
         }
     }
 }

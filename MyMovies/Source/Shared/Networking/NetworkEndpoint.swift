@@ -12,11 +12,11 @@ struct NetworkEndpoint {
     let path: String
     let appConfiguration: AppConfigurable.Type
 
-    init(scheme: String = "https",
-         path: String,
+    init(path: String,
+         scheme: String = "https",
          appConfiguration: AppConfigurable.Type = AppConfiguration.self) {
-        self.scheme = scheme
         self.path = path
+        self.scheme = scheme
         self.appConfiguration = appConfiguration
     }
 

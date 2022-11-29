@@ -29,7 +29,9 @@ struct MovieDetailsView: View {
                 .padding(10)
             }.padding(10)
         }.onAppear {
-            viewModel.loadDetails()
+            Task {
+                try await viewModel.loadDetails()
+            }
         }.toolbar {
             Button {
                 viewModel.toggleFavorite()

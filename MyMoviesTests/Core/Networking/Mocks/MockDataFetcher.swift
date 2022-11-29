@@ -20,7 +20,8 @@ class MockDataFetcher: DataFetching {
         self.urlSession = urlSession
     }
 
-    func fetch<DataType>(endpoint: NetworkEndpoint, parameters: [RequestParameters]) async throws -> DataType where DataType : Decodable, DataType : Encodable {
+    func fetch<DataType>(endpoint: NetworkEndpoint,
+                         parameters: [RequestParameters]) async throws -> DataType where DataType: Decodable, DataType: Encodable {
         if let data = self.data as? DataType {
             return data
         } else {

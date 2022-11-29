@@ -19,13 +19,18 @@ extension DataFetching {
                                   parameters: [RequestParameters]) async throws -> DataType {
         let token = try await authenticator.authenticate()
         var urlComponents = endpoint.urlComponents
-        let additionalParameters = [URLQueryItem(name: "api_key", value: token),
-                                    URLQueryItem(name: "language", value: endpoint.appConfiguration.language)]
+        let additionalParameters = [
+            URLQueryItem(name: "api_key", value: token),
+            URLQueryItem(name: "language", value: endpoint.appConfiguration.language)
+        ]
+
         urlComponents.queryItems = parameters.flatMap { $0.queryItems } + additionalParameters
 
         let replaceablePathComponents = parameters.flatMap { $0.pathParameters }
         for component in replaceablePathComponents {
-            urlComponents.path = urlComponents.path.replacingOccurrences(of: component.name.value, with: "\(component.value)")
+            urlComponents.path = urlComponents
+                .path
+                .replacingOccurrences(of: component.name.value, with: "\(component.value)")
         }
 
         guard

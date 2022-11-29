@@ -29,6 +29,7 @@
 		F83DEBF62936612100587D21 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F83DEBF52936612100587D21 /* OrderedCollections */; };
 		F83DEBF82936A0BD00587D21 /* MoviesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */; };
 		F83DEBFA2936A20C00587D21 /* MockDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBF92936A20C00587D21 /* MockDataFetcher.swift */; };
+		F83DEBFD2936B3D800587D21 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DEBFC2936B3D800587D21 /* MovieDetailsViewModelTests.swift */; };
 		F8A440CD29328F150041E4A0 /* DataFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440CC29328F150041E4A0 /* DataFetching.swift */; };
 		F8A440CF29328F8C0041E4A0 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440CE29328F8C0041E4A0 /* NetworkEndpoint.swift */; };
 		F8A440D32932916C0041E4A0 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A440D22932916C0041E4A0 /* CoreError.swift */; };
@@ -99,6 +100,7 @@
 		F83DEBF229364BF000587D21 /* FileManager+Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Documents.swift"; sourceTree = "<group>"; };
 		F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelTests.swift; sourceTree = "<group>"; };
 		F83DEBF92936A20C00587D21 /* MockDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFetcher.swift; sourceTree = "<group>"; };
+		F83DEBFC2936B3D800587D21 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		F8A440CC29328F150041E4A0 /* DataFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetching.swift; sourceTree = "<group>"; };
 		F8A440CE29328F8C0041E4A0 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		F8A440D22932916C0041E4A0 /* CoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				F83DEBF72936A0BD00587D21 /* MoviesViewModelTests.swift */,
+				F83DEBFC2936B3D800587D21 /* MovieDetailsViewModelTests.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				F833B83C2930E2CC00A824EB /* Sources */,
 				F833B83D2930E2CC00A824EB /* Frameworks */,
 				F833B83E2930E2CC00A824EB /* Resources */,
+				F83DEBFB2936B2C800587D21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -663,6 +667,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F83DEBFB2936B2C800587D21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F833B83C2930E2CC00A824EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -708,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83DEBFD2936B3D800587D21 /* MovieDetailsViewModelTests.swift in Sources */,
 				F8A441002932C8880041E4A0 /* MockAppConfiguration.swift in Sources */,
 				F83DEBFA2936A20C00587D21 /* MockDataFetcher.swift in Sources */,
 				F83DEBF82936A0BD00587D21 /* MoviesViewModelTests.swift in Sources */,

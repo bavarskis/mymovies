@@ -17,4 +17,3 @@ struct MockAuthenticator: SessionAuthenticating {
         return token
     }
 }
-

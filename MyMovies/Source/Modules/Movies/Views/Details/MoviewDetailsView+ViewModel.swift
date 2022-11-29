@@ -14,12 +14,12 @@ extension MovieDetailsView {
 
         private(set) var movie: Movie
         private(set) var movieDetails: MovieDetails?
-        private var isFavorite: Bool = false {
+        private var isFavorite = false {
             didSet {
                 updateButtonImage()
             }
         }
-        private var dataFetcher: DataFetching = DataFetcher()
+        private var dataFetcher: DataFetching
 
         @Published var imagePath: String?
         @Published var movieInfo: [MovieInfoLine] = []
@@ -36,8 +36,9 @@ extension MovieDetailsView {
         private let movieLanguageTitle = NSLocalizedString("movieLanguage", comment: "")
         private let releaseDateTitle = NSLocalizedString("releaseDate", comment: "")
 
-        init(movie: Movie) {
+        init(movie: Movie, dataFetcher: DataFetching = DataFetcher()) {
             self.movie = movie
+            self.dataFetcher = dataFetcher
             self.imagePath = movie.backdropFullPath
             self.favoriteButtonImage = "star"
             let storedMovieDetails: MovieDetails? = try? retrieve(id: movie.id)
@@ -45,16 +46,15 @@ extension MovieDetailsView {
             updateButtonImage()
         }
 
-        func loadDetails() {
-            Task {
+        func loadDetails() async throws {
                 let paramName = PathComponentParameterName.movieId
                 let param = PathComponentParameter(name: paramName,
                                                    value: "\(movie.id)")
 
-                let movieDetails: MovieDetails = try await dataFetcher.fetch(endpoint: .movieDetails, parameters: [.pathParameters([param])])
-                self.movieDetails = movieDetails
+                let details: MovieDetails = try await dataFetcher.fetch(endpoint: .movieDetails,
+                                                                        parameters: [.pathParameters([param])])
+                self.movieDetails = details
                 updateInfo()
-            }
         }
 
         func toggleFavorite() {
@@ -138,4 +138,3 @@ extension MovieDetailsView {
         }
     }
 }
-

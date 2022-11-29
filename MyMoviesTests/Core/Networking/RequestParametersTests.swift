@@ -11,7 +11,7 @@ import XCTest
 final class RequestParametersTests: XCTestCase {
     func testWhenNoParametersArePassed_shouldReturnEmptyList() {
         let paramsContainer = RequestParameters.empty
-        XCTAssertTrue(paramsContainer.queryItems.count == 0)
+        XCTAssertTrue(paramsContainer.queryItems.isEmpty)
     }
 
     func testWhenTwoParametersArePassed_shouldReturnTwoQueryItems() {
@@ -22,4 +22,3 @@ final class RequestParametersTests: XCTestCase {
         XCTAssertEqual(paramsContainer.queryItems.last, URLQueryItem(name: "age", value: "39"))
     }
 }
-
