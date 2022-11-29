@@ -10,4 +10,5 @@ import Foundation
 extension NetworkEndpoint {
     static let nowPlayingMovies = NetworkEndpoint(path: "/movie/now_playing")
     static let popularMovies = NetworkEndpoint(path: "/movie/popular")
+    static let movieDetails = NetworkEndpoint(path: "/movie/\(PathComponentParameterName.movieId.value)")
 }

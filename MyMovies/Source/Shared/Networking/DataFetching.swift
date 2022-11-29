@@ -11,15 +11,21 @@ protocol DataFetching {
     var authenticator: SessionAuthenticating { get }
     var urlSessionConfiguration: URLSessionConfiguration { get }
     var urlSession: URLSession { get }
-    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: RequestParameters) async throws -> DataType
+    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: [RequestParameters]) async throws -> DataType
 }
 
 extension DataFetching {
-    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: RequestParameters) async throws -> DataType {
+    func fetch<DataType: Codable>(endpoint: NetworkEndpoint, parameters: [RequestParameters]) async throws -> DataType {
         let token = try await authenticator.authenticate()
 
         var urlComponents = endpoint.urlComponents
-        urlComponents.queryItems = parameters.queryItems + [URLQueryItem(name: "api_key", value: token)]
+
+        urlComponents.queryItems = parameters.flatMap { $0.queryItems } + [URLQueryItem(name: "api_key", value: token)]
+
+        let replaceablePathComponents = parameters.flatMap { $0.pathParameters }
+        for component in replaceablePathComponents {
+            urlComponents.path = urlComponents.path.replacingOccurrences(of: component.name.value, with: "\(component.value)")
+        }
 
         guard
             let urlString = urlComponents.string,

@@ -12,3 +12,12 @@
 "nowPlaying" = "Now playing";
 "popular" = "Popular";
 "movies" = "Movies";
+"genres" = "Genre";
+"tagline" = "Tagline";
+"title" = "Title";
+"budget" = "Budget";
+"homepage" = "Homepage";
+"overview" = "About";
+"movieLanguage" = "Movie language";
+"releaseDate" = "Release date";
+"rating" = "Rating";

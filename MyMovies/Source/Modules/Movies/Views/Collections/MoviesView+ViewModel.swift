@@ -25,10 +25,10 @@ extension MoviesView {
             Task {
                 switch movieType {
                 case .nowPlaying:
-                    let movies: Movies = try await DataFetcher().fetch(endpoint: .nowPlayingMovies, parameters: .empty)
+                    let movies: Movies = try await DataFetcher().fetch(endpoint: .nowPlayingMovies, parameters: [.empty])
                     nowPlayingMovies = movies.results
                 case .popular:
-                    let movies: Movies = try await DataFetcher().fetch(endpoint: .popularMovies, parameters: .empty)
+                    let movies: Movies = try await DataFetcher().fetch(endpoint: .popularMovies, parameters: [.empty])
                     popularMovies = movies.results
                 }
             }
