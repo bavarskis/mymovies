@@ -30,12 +30,18 @@ struct MovieDetailsView: View {
             }.padding(10)
         }.onAppear {
             viewModel.loadDetails()
+        }.toolbar {
+            Button {
+                viewModel.toggleFavorite()
+            } label: {
+                Image(systemName: viewModel.favoriteButtonImage)
+            }
         }
     }
 }
 
 struct MovieDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailsView(movie: Movie(id: 0, title: "Preview"))
+        MovieDetailsView(movie: Movie(id: 0, title: "Preview", backdropPath: nil))
     }
 }

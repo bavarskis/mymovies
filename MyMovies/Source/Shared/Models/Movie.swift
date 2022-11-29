@@ -24,12 +24,3 @@ extension Movie {
         backdropPath.flatMap { AppConfiguration.imagesLocation + $0 }
     }
 }
-
-extension Movie {
-    init(id: Int, title: String) {
-        self.id = id
-        self.title = title
-        self.backdropPath = nil
-    }
-}
-
