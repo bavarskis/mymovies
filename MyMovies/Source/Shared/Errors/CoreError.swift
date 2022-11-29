@@ -8,7 +8,7 @@
 import Foundation
 
 enum CoreError: Error {
-    case generic(Error)
+    case generic
     case authentication
     case mapping(Error)
     case invalidUrl

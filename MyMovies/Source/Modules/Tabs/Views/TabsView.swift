@@ -18,10 +18,13 @@ struct TabsView: View {
                 Label("home.tab", systemImage: "house")
             }
 
-            FavoritesView()
-                .tabItem {
-                    Label("favorites.tab", systemImage: "star")
-                }
+            NavigationView {
+                FavoritesView()
+                    .navigationTitle("favorites.tab")
+            }
+            .tabItem {
+                Label("favorites.tab", systemImage: "star")
+            }
         }
     }
 }

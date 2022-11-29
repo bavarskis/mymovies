@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDetails: Codable, Identifiable {
+struct MovieDetails: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
     let tagline: String?
@@ -35,11 +35,25 @@ struct MovieDetails: Codable, Identifiable {
         case language = "original_language"
         case releaseDate = "release_date"
     }
+
+    static func == (lhs: MovieDetails, rhs: MovieDetails) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
 }
 
 extension MovieDetails {
     struct MoviewGenre: Codable, Identifiable {
         let id: Int
         let name: String
+    }
+}
+
+extension MovieDetails {
+    var backdropFullPath: String? {
+        backdropPath.flatMap { AppConfiguration.imagesLocation + $0 }
     }
 }

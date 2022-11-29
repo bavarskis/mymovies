@@ -8,12 +8,22 @@
 import SwiftUI
 
 extension MovieDetailsView {
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor class ViewModel: ObservableObject, FileStoring {
+        typealias Item = MovieDetails
+        let storagePath = FavoritesStorage.storagePath
+
         private(set) var movie: Movie
         private(set) var movieDetails: MovieDetails?
+        private var isFavorite: Bool = false {
+            didSet {
+                updateButtonImage()
+            }
+        }
+        private var dataFetcher: DataFetching = DataFetcher()
 
         @Published var imagePath: String?
         @Published var movieInfo: [MovieInfoLine] = []
+        @Published var favoriteButtonImage: String
 
         // Titles
         private let movieNameTitle = NSLocalizedString("title", comment: "")
@@ -29,6 +39,10 @@ extension MovieDetailsView {
         init(movie: Movie) {
             self.movie = movie
             self.imagePath = movie.backdropFullPath
+            self.favoriteButtonImage = "star"
+            let storedMovieDetails: MovieDetails? = try? retrieve(id: movie.id)
+            self.isFavorite = storedMovieDetails != nil
+            updateButtonImage()
         }
 
         func loadDetails() {
@@ -37,9 +51,27 @@ extension MovieDetailsView {
                 let param = PathComponentParameter(name: paramName,
                                                    value: "\(movie.id)")
 
-                let movieDetails: MovieDetails = try await DataFetcher().fetch(endpoint: .movieDetails, parameters: [.pathParameters([param])])
+                let movieDetails: MovieDetails = try await dataFetcher.fetch(endpoint: .movieDetails, parameters: [.pathParameters([param])])
                 self.movieDetails = movieDetails
                 updateInfo()
+            }
+        }
+
+        func toggleFavorite() {
+            guard let details = movieDetails else {
+                return
+            }
+
+            do {
+                if isFavorite {
+                    try remove(item: details)
+                    isFavorite = false
+                } else {
+                    try store(items: [details])
+                    isFavorite = true
+                }
+            } catch {
+                print("could not store")
             }
         }
 
@@ -96,9 +128,14 @@ extension MovieDetailsView {
             return MovieInfoLine(text: key, id: title)
         }
 
+        private func updateButtonImage() {
+            favoriteButtonImage = isFavorite ? "star.fill" : "star"
+        }
+
         struct MovieInfoLine: Identifiable {
             private(set) var text: LocalizedStringKey
             private(set) var id: String
         }
     }
 }
+

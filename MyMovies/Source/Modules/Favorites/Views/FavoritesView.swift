@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @StateObject private var viewModel = ViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("favorites.tab")
+        ScrollView {
+            VStack {
+                ForEach(viewModel.favorites) { movieDetails in
+                    NavigationLink(destination: MovieDetailsView(movie: Movie(id: movieDetails.id, title: movieDetails.title, backdropPath: movieDetails.backdropPath))) {
+                        ImageAndText(imagePath: movieDetails.backdropFullPath, text: movieDetails.title)
+                    }
+                }
+            }
         }
-        .padding()
+        .background(.clear)
+        .task {
+            viewModel.fetchFavorites()
+        }
     }
 }
 

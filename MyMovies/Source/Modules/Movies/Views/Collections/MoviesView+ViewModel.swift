@@ -15,11 +15,7 @@ extension MoviesView {
         @Published var nowPlayingMovies: [Movie] = []
         @Published var popularMovies: [Movie] = []
 
-        private var dataFetcher: DataFetching
-
-        init(dataFetcher: DataFetching = DataFetcher()) {
-            self.dataFetcher = dataFetcher
-        }
+        private var dataFetcher: DataFetching = DataFetcher()
 
         func loadData(for movieType: MovieType) {
             Task {
