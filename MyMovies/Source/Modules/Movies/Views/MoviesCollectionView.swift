@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ACarousel
 
 struct MoviesCollectionView: View {
     let title: String
