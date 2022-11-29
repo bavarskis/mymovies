@@ -24,7 +24,7 @@ struct MoviesView: View {
                     }
 
                 // Popular
-                MoviesCollectionView(title: viewModel.popularTitle, movies: viewModel.nowPlayingMovies)
+                MoviesCollectionView(title: viewModel.popularTitle, movies: viewModel.popularMovies)
                     .task {
                         do {
                             try await viewModel.loadData(for: .popular)

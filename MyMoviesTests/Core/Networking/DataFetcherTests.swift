@@ -51,12 +51,12 @@ final class DataFetcherTests: XCTestCase {
 }
 
 private extension NetworkEndpoint {
-    static let localhost = NetworkEndpoint(scheme: "http",
-                                           path: "/8080",
+    static let localhost = NetworkEndpoint(path: "/8080",
+                                           scheme: "http",
                                            appConfiguration: MockAppConfiguration.self)
 
     // path is missing a front slash
-    static let invalidEndpoint = NetworkEndpoint(scheme: "http",
-                                                 path: "8080",
+    static let invalidEndpoint = NetworkEndpoint(path: "8080",
+                                                 scheme: "http",
                                                  appConfiguration: MockAppConfiguration.self)
 }
