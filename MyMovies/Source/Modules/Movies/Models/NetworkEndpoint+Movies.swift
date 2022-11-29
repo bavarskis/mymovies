@@ -9,6 +9,8 @@ import Foundation
 
 extension NetworkEndpoint {
     static let nowPlayingMovies = NetworkEndpoint(path: "/movie/now_playing")
-    static let popularMovies = NetworkEndpoint(path: "/movie/popular")
+    // For demo purposes using `top_rated`
+    // because `popular` endpoint returns same results as `now_paying`
+    static let popularMovies = NetworkEndpoint(path: "/movie/top_rated")
     static let movieDetails = NetworkEndpoint(path: "/movie/\(PathComponentParameterName.movieId.value)")
 }

@@ -38,7 +38,13 @@ struct MovieDetailsView: View {
             } label: {
                 Image(systemName: viewModel.favoriteButtonImage)
             }
-        }
+        }.background(
+            Image("film")
+                .resizable()
+                .scaledToFill()
+                .blur(radius: 30)
+                .zIndex(0)
+        )
     }
 }
 

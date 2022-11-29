@@ -18,12 +18,19 @@ struct FavoritesView: View {
                         ImageAndText(imagePath: movieDetails.backdropFullPath, text: movieDetails.title)
                     }
                 }
-            }
+            }.padding(10)
         }
         .background(.clear)
         .task {
             viewModel.fetchFavorites()
         }
+        .background(
+            Image("camera")
+                .resizable()
+                .scaledToFill()
+                .blur(radius: 30)
+                .zIndex(0)
+        )
     }
 }
 
