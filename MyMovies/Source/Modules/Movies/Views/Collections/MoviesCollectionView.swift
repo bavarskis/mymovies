@@ -18,7 +18,7 @@ struct MoviesCollectionView: View {
             .font(.headline)
             .lineLimit(2)
 
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 25) {
                 ForEach(movies) { movie in
                     GeometryReader { proxy in
