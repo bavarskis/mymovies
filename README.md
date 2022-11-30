@@ -1,6 +1,6 @@
 # My Movies
 
-https://github.com/bavarskis/mymovies/blob/develop/MyMovies.MOV
+https://github.com/bavarskis/mymovies/blob/main/mymovies.gif
 
 **My Movies** is a movie browsing app which allows you to mark movies as `favorites`. Yay.
 It is a demo app built with `SwiftUI` :rocket: 
